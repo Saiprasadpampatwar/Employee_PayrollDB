@@ -59,3 +59,16 @@ mysql> insert into employee_payroll (name, salary, start) values	# insert operat
     -> ('Bill', 6000000.00, '2020-05-29'),
     -> ('Melissa', 800000.00, '2020-05-09'),
     -> ('Sunita', 100000.00, '2020-05-23');
+
+# UC4 Retrieve Employee Payroll Data
+
+mysql> select * from employee_payroll; 			# retrieve all employee payroll data
++----+---------+---------+------------+
+| id | name    | salary  | start      |
++----+---------+---------+------------+
+|  1 | Mark    | 1000000 | 2020-05-18 |
+|  2 | Jeff    | 2000000 | 2020-05-25 |
+|  3 | Bill    | 6000000 | 2020-05-29 |
+|  4 | Melissa |  800000 | 2020-05-09 |
+|  5 | Sunita  |  100000 | 2020-05-23 |
++----+---------+---------+------------+
