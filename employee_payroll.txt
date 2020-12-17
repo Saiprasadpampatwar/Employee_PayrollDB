@@ -298,3 +298,27 @@ mysql> desc employee_payroll;
 | salary      | double       | NO   |     | NULL    |                |
 | start       | date         | NO   |     | NULL    |                |
 +-------------+--------------+------+-----+---------+----------------+
+
+# UC9 Extended Employee Payroll table to add Basicpay, deductions, Taxable Pay, Income, Tax and Net Pay
+
+mysql> alter table employee_payroll rename column salary to basic_pay;
+
+mysql> alter table employee_payroll add deductions double not null after basic_pay;
+
+mysql> alter table employee_payroll add taxable_pay double not null after deductions;
+
+mysql> alter table employee_payroll add tax double not null after taxable_pay;
+
+mysql> alter table employee_payroll add net_pay double not null after tax;
+
+mysql> select * from employee_payroll;
++----+---------+-------------+---------+------------+--------+-----------+------------+-------------+-----+---------+------------+
+| id | name    | phonenumber | address | department | gender | basic_pay | deductions | taxable_pay | tax | net_pay | start      |
++----+---------+-------------+---------+------------+--------+-----------+------------+-------------+-----+---------+------------+
+|  1 | Mark    | NULL        | NULL    |            | M      |   1000000 |          0 |           0 |   0 |       0 | 2020-05-18 |
+|  2 | Jeff    | NULL        | NULL    |            | M      |   2000000 |          0 |           0 |   0 |       0 | 2020-05-25 |
+|  3 | Bill    | NULL        | NULL    |            | M      |   6000000 |          0 |           0 |   0 |       0 | 2020-05-29 |
+|  4 | Melissa | NULL        | NULL    |            | F      |    800000 |          0 |           0 |   0 |       0 | 2020-05-09 |
+|  5 | Sunita  | NULL        | NULL    |            | F      |    100000 |          0 |           0 |   0 |       0 | 2020-05-23 |
++----+---------+-------------+---------+------------+--------+-----------+------------+-------------+-----+---------+------------+
+
