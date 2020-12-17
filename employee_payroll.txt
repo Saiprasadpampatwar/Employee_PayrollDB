@@ -92,6 +92,7 @@ ate) and date(now());
 |  5 | Sunita |  100000 | 2020-05-23 |
 +----+--------+---------+------------+
 
+# UC6 Update gender column in employee in Payroll table
 
 mysql> alter table employee_payroll add gender char(1) after name;      # adding gender field
 
@@ -121,4 +122,20 @@ mysql> select * from employee_payroll;
 |  3 | Bill    | M      | 6000000 | 2020-05-29 |
 |  4 | Melissa | NULL   |  800000 | 2020-05-09 |
 |  5 | Sunita  | NULL   |  100000 | 2020-05-23 |
++----+---------+--------+---------+------------+
+
+mysql> update employee_payroll
+    -> set gender = 'F'
+    -> where name = 'Melissa' or
+    -> name ='Sunita';
+
+mysql> select * from employee_payroll;
++----+---------+--------+---------+------------+
+| id | name    | gender | salary  | start      |
++----+---------+--------+---------+------------+
+|  1 | Mark    | M      | 1000000 | 2020-05-18 |
+|  2 | Jeff    | M      | 2000000 | 2020-05-25 |
+|  3 | Bill    | M      | 6000000 | 2020-05-29 |
+|  4 | Melissa | F      |  800000 | 2020-05-09 |
+|  5 | Sunita  | F      |  100000 | 2020-05-23 |
 +----+---------+--------+---------+------------+
