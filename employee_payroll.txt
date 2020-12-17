@@ -28,3 +28,25 @@ mysql> select database();
 +-----------------+
 | payroll_service |
 +-----------------+
+
+# UC2 Create table 
+
+mysql> create table employee_payroll
+    -> (
+    -> id       INT unsigned not null AUTO_INCREMENT,   # uniqueid for record
+    -> name     varchar(150) not null,			# name of the employee
+    -> salary   double not null,			# Employee Salary
+    -> start    date not null,				# Employee Start Date
+    -> primary  key (id)				# make id primary key
+    -> );
+
+mysql> desc employee_payroll; 				# describe table
+
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
