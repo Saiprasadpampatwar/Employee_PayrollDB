@@ -50,3 +50,12 @@ mysql> desc employee_payroll; 				# describe table
 | salary | double       | NO   |     | NULL    |                |
 | start  | date         | NO   |     | NULL    |                |
 +--------+--------------+------+-----+---------+----------------+
+
+# UC3 Insert Data in table
+
+mysql> insert into employee_payroll (name, salary, start) values	# insert operation
+    -> ('Mark', 1000000.00, '2020-05-18'),
+    -> ('Jeff', 2000000.00, '2020-05-25'),
+    -> ('Bill', 6000000.00, '2020-05-29'),
+    -> ('Melissa', 800000.00, '2020-05-09'),
+    -> ('Sunita', 100000.00, '2020-05-23');
