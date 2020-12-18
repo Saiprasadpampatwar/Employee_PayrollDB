@@ -353,7 +353,7 @@ mysql> create table company (
     -> company_name VARCHAR(250) NOT NULL);
 
 mysql> create table employee_details(
-    -> emp_id int unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    -> emp_id int unsigned NOT NULL PRIMARY KEY,
     -> name VARCHAR(50) NOT NULL,
     -> company_id int,
     -> phone_number VARCHAR(50) NOT NULL,
@@ -369,7 +369,7 @@ mysql> create table department (
     -> );
 
 mysql> create table payroll (
-    -> emp_id int unsigned NOT NULL AUTO_INCREMENT,
+    -> emp_id int unsigned NOT NULL,
     -> basic_pay Double NOT NULL,
     -> deductions Double NOT NULL,
     -> taxable_pay Double NOT NULL,
@@ -379,7 +379,7 @@ mysql> create table payroll (
     -> );
 
 mysql> create table employee_department (
-    -> emp_id int unsigned NOT NULL AUTO_INCREMENT,
+    -> emp_id int unsigned NOT NULL,
     -> dept_id int NOT NULL,
     -> FOREIGN KEY (emp_id) REFERENCES employee_details(emp_id),
     -> FOREIGN KEY (dept_id) REFERENCES department(dept_id)
